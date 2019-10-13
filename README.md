@@ -3,6 +3,12 @@
 ### 学习Vue全家桶
 项目涉及知识点：vue、vue-router、vuex、axios、es6、less、mint-ui、mui、php、mysql
 
+作品展示：
+
+![pet](https://github.com/caicaijun007/xiaocaicai07.github.io/blob/master/pet.gif)
+
+
+
 #### 1、全局安装vue-cli3.0脚手架工具
 ```cmd
 # npm install -g @vue/cli
@@ -10,18 +16,18 @@
 
 #### 2、使用vue-cli脚手架创建vue项目
 ```cmd
-# vue create pets
+# vue create pet
 ```
 选择配置Babel、ESlint、Less，其它用到再手动安装，避免脚手架创建项目时生成额外的文件或配置
 
 #### 3、目录结构划分
-- assets   				资源目录
-- components		   基础组件、公共组件
-- configs		               配置文件
-- router			     路由
-- store				     store
-- utils			               公共方法
-- views			             业务逻辑页面
+- assets			资源目录
+- components	       基础组件、公共组件
+- configs			 配置文件
+- router			路由
+- store				store
+- utils				 公共方法
+- views			        业务逻辑页面
 
 #### 4、引入mui和安装mint-ui
 ```cmd
@@ -136,15 +142,67 @@ ul,li {
 }
 ```
 
-#### 7、使用mui、vue-router实现TabBar功能
-涉及到vue-router的router-link、to属性的使用
+#### 7、封装TabBar组件
+- router-link、to属性的使用
 
-#### 8、使用mint-ui、实现NavBar功能
-涉及vue的props父组件向子组件传值、slot插槽、v-bind值绑定、v-show、v-on事件监听、$router.go(-1)返回
+#### 8、封装NavBar组件
+- props父组件向子组件传值、slot插槽、v-bind值绑定、v-show、v-on事件监听
+- $router.go(-1)返回
 
-#### 9、APP主页实现
-引入TabBar、NavBar组件
-涉及到vue-router的router-view和keep-alive的exclude属性的使用
+#### 9、APP主页
+- 导入TabBar、NavBar组件
+- router-view和keep-alive的exclude属性的使用
 
+#### 10、封装Swiper组件
+- v-if、v-else、v-for、v-bind值绑定、v-on事件监听
+- 事件修饰符prevent、props父组件向子组件传值
+- this.$router.push({name: '', params:{}})
 
+#### 11、封装Grid组件
+- v-for、v-bind值绑定、v-on事件监听、事件修饰符prevent
+- Mustache语法{{}}、props父组件向子组件传值
+- this.$router.push({name: '', params:{}})
 
+#### 12、Home主页
+- 导入Swiper、Grid组件
+- 导入封装的Request异步请求方法
+- 在created生命周期函数一次性请求所有数据
+- 父组件向之组件传值使用v-bind值绑定
+- 详情页跳转this.$router.push({name: '', params:{}})
+
+#### 13、Category分类
+- 导入封装的Request异步请求方法
+- axios请求data数据方法传递参数为分类ID、当前页数、每页总条数、分类数组
+- 在created生命周期函数一次性请求所有数据
+- v-for、v-bind值绑定、v-on事件监听、绑定class属性值、v-show、Mustache语法{{}}
+- 获取路由参数this.$route.params.参数名
+
+#### 14、封装NumBox组件
+- v-bind值绑定、v-on事件监听、ref属性值
+- props父组件向子组件传值、$emit('方法名',  参数)子组件向父组件传值
+- store的state保存shopcar；mutations定义加入购物车保存状态方法、更新购物车状态发方法
+- 商品数目改变调用$store.commit('方法名', 参数)
+- 获取input输入框当前value值this.$refs.numBox.value
+- 定义商品数目增加或减少方法；判断最大值、最小值
+
+#### 15、封装Comment组件
+- v-for、v-bind值绑定、v-on事件监听、Mustache语法{{}}、v-model双向数据绑定
+- 导入封装的Request异步请求方法；get方法获取评论；post发表评论；注意this指向问题
+- 导入公共方法Utilts.dateFormate()时间格式化方法
+- props父组件向子组件传值
+
+#### 16、Shopcar购物车
+- v-for、:src属性值绑定、@change事件监听、@click.prevent事件修饰符
+- Mustache语法{{}}、v-model双向数据绑定
+- 获取购物车状态$store.state.shopcar
+- 从购物车中删除商品、切换商品选购状态调用$store.commit('方法名', 参数)
+- 获取store里定义的计算属性$store.getters
+
+#### 17、Profile我的
+- v-for、:src属性值绑定、@click事件监听、@click.prevent事件修饰符、Mustache语法{{}}
+
+- this.$router.push("路由地址")
+
+- this.$router.push({ name: '', params: { } })
+
+  
